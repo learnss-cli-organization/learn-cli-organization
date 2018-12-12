@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="renderer" content="webkit">
+  <title>买买车经销商平台</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<style type="text/css">
+  html{font:12px/1.5 'microsoft yahei','微软雅黑',STHeiti,"黑体",arial,Simsun,sans-serif,Helvetica Regular;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+  html,body,div,h1,h2,h3,h4,h5,h6,p,blockquote,dl,dt,dd,ol,ul,li,table,caption,tbody,tfoot,thead,tr,th,td,article,canvas,embed,footer,header,menu,nav,section,video{margin:0;padding:0;border:0;vertical-align:baseline}
+  li{list-style:none}
+  h1, h2, h3, h4, h5 {font-family: "microsoft yahei", STHeiti, 黑体, arial, Simsun, sans-serif;font-weight: 400;}
+  h1{font-size:2em;margin:.67em 0}
+  img{border:0}
+  html,
+  body {
+    background: #fff;
+    min-width: 1140px;
+  }
+  .header .logo {
+    display: block;
+    width: 150px;
+    margin: 10px 20%;
+    text-indent: -999em;
+    line-height: 30px;
+    background: url(images/login_sprite.png) no-repeat left center;
+    background-position: 0 0;
+  }
+  .banner {
+    position: relative;
+    height: 400px;
+    background: url(images/login_banner.jpg) no-repeat center center;
+  }
+  .banner .slogan {
+    position: absolute;
+    right: 20%;
+    top: 50px;
+    text-align: right;
+  }
+  .banner .slogan strong {
+    font-size: 34px;
+    color: #fff;
+  }
+  .banner .slogan p {
+    font-size: 14px;
+    color: #6cb5ff;
+  }
+  .ul-common {
+    width: 1100px;
+    font-size: 0;
+    text-align: center;
+  }
+  .item {
+    margin: 50px auto;
+  }
+  .item li {
+    width: 150px;
+    padding-left: 45px;
+    margin-right: 70px;
+    text-align: left;
+    display: inline-block;
+    background: url(images/login_sprite.png) no-repeat left center;
+    background-size: 450px;
+  }
+  .item li strong {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .item li p {
+    font-size: 13px;
+  }
+  .item li:first-child {
+    background-position: 0 -37px;
+  }
+  .item li:nth-child(2) {
+    background-position: 0 -84px;
+  }
+  .item li:nth-child(3) {
+    background-position: 0 -132px;
+  }
+  .item li:last-child {
+    margin-right: 0;
+    background-position: 0 -178px;
+  }
+  .business {
+    height: 680px;
+    padding-top: 40px;
+    text-align: center;
+    background: url(images/login_business_bg.jpg) no-repeat center top;
+  }
+  .business-title {
+    font-size: 28px;
+    padding: 10px;
+  }
+  .business-title::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #3b80c4;
+    width: 48px;
+    margin: 15px auto;
+  }
+  .business .list {
+    margin: 20px auto;
+    color: #fff;
+  }
+  .business .list li {
+    position: relative;
+    width: 32%;
+    height: 400px;
+    font-size: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 1px;
+  }
+  .business .list li strong {
+    display: block;
+    font-size: 23px;
+    margin: 120px auto 20px;
+  }
+  .business .list li p {
+    font-size: 15px;
+  }
+  .business .list li:first-child {
+    background: url(images/login_business_bg1.png) no-repeat;
+    background-size: cover;
+  }
+  .business .list li:nth-child(2) {
+    background: url(images/login_business_bg2.png) no-repeat;
+    background-size: cover;
+  }
+  .business .list li:nth-child(3) {
+    background: url(images/login_business_bg2.png) no-repeat;
+    background-size: cover;
+  }
+  .business .list li .slide {
+    width: 272px;
+    height: 320px;
+    padding: 40px;
+    background: #3d83ca;
+    opacity: 0.95;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    text-align: left;
+    transition: left 0.4s;
+    -moz-transition: left 0.4s;
+    -webkit-transition: left 0.4s;
+    -o-transition: left 0.4s;
+  }
+  .business .list li .slide dt {
+    font-size: 23px;
+  }
+  .business .list li .slide dt::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: #fff;
+    margin: 25px 0 35px;
+  }
+  .business .list li:hover .slide {
+    left: 0;
+  }
+  .business .bottom {
+    margin: 40px auto;
+  }
+  .business .bottom li {
+    width: 33%;
+    display: inline-block;
+  }
+  .business .bottom li strong {
+    font-size: 18px;
+    color: #8f222b;
+  }
+  .business .bottom li p {
+    color: #707070;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+  .advantage {
+    text-align: center;
+    padding-top: 40px;
+  }
+  .advantage img {
+    display: block;
+    width: 900px;
+    margin: 30px auto 0 auto;
+  }
+  .advantage .img {
+    padding-bottom: 70px;
+    border-bottom: 1px solid #ededed;
+  }
+  .advantage-list {
+    margin: 0px auto;
+    padding: 40px 0;
+    color: #656565;
+  }
+  .advantage-list li {
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    padding-left: 40px;
+    margin-right: 120px;
+    display: inline-block;
+    background: url(images/login_sprite.png) no-repeat;
+    background-size: 440px;
+  }
+  .advantage-list li:first-child {
+    background-position: -240px -33px;
+  }
+  .advantage-list li:nth-child(2) {
+    background-position: -240px -68px;
+  }
+  .advantage-list li:nth-child(3) {
+    background-position: -240px -105px;
+  }
+  .advantage-list li:last-child {
+    margin-right: 0;
+    background-position: -240px -145px;
+  }
+  .footer {
+    height: 250px;
+    color: #707070;
+    background: #242424;
+    text-align: center;
+  }
+  .footer .f-logo {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    margin-top: 70px;
+    display: inline-block;
+    background: url(images/login_sprite.png) no-repeat;
+    background-size: 440px;
+    background-position: 13px -220px;
+  }
+  .footer .f-logo::before,
+  .footer .f-logo::after {
+    position: absolute;
+    content: '';
+    display: block;
+    height: 1px;
+    width: 150px;
+    background: #323232;
+    top: 50%;
+    left: -140%;
+  }
+  .footer .f-logo::after {
+    left: 140%;
+  }
+  .fixed-share {
+    position: fixed;
+    width: 100px;
+    height: 300px;
+    top: 240px;
+    left: 3%;
+  }
+  .fixed-share img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+</style>
+<body>
+  <div class="header">
+    <span class="logo">神州买买车</span>
+  </div>
+  <div class="banner">
+    <div class="slogan">
+      <strong>网罗财富 车商共赢</strong>
+      <p>优惠政策+惊爆返利，多重惊喜来袭，期待您的加入！</p>
+    </div>
+  </div>
+  <ul class="item ul-common">
+    <li>
+      <strong>支持3大业务</strong>
+      <p>覆盖车辆金融全产业</p>
+    </li>
+    <li>
+      <strong>支持3大业务</strong>
+      <p>覆盖车辆金融全产业</p>
+    </li>
+    <li>
+      <strong>支持3大业务</strong>
+      <p>覆盖车辆金融全产业</p>
+    </li>
+    <li>
+      <strong>支持3大业务</strong>
+      <p>覆盖车辆金融全产业</p>
+    </li>
+  </ul>
+  <div class="business">
+    <h2 class="business-title">三大业务模块</h2>
+    <ul class="list ul-common">
+      <li>
+        <strong>车辆分销</strong>
+        <p>销售神州车电商车辆赚取差价</p>
+        <p>超低售价基础上还支持分期购车</p>
+        <dl class="slide">
+          <dt>车辆分销</dt>
+          <dd>车辆分销是神州车电商自有车辆的分销销售业务，无论您是车辆销售个体或者企业都可申请加入此项业务。我们可以为您提供优质车源和具有竞争力的市场价格，支持分期或全款购车，此外您还可以将“0”首付及更多明星金融产品销售给终端客户。多项返利和优惠政策正在火热开展中，期待您的加入！</dd>
+        </dl>
+      </li>
+      <li>
+        <strong>车辆抵押</strong>
+        <p>针对汽车销售企业的明星金融产品</p>
+        <p>帮助经销商销售车辆并迅速回笼资金</p>
+        <dl class="slide">
+          <dt>车辆抵押</dt>
+          <dd>车辆抵押是神州车电商为具有汽车销售资格的企业开办的金融服务业务，采用先过户后抵押的形式辅助经销商销售车辆并迅速回笼资金，降低库存及资金的双重压力。如果您是具有销售车辆资格的企业，正在寻找明星汽车金融产品，神州车辆抵押服务将是您的不二选择！小时级放款速率，多项返点政策，期待您的加入！</dd>
+        </dl>
+      </li>
+      <li>
+        <strong>金融分销</strong>
+        <p>为企业推出的车辆抵押贷款金融服务</p>
+        <p>用户办理贷款手续后超多返点送给您</p>
+        <dl class="slide">
+          <dt>金融分销</dt>
+          <dd>金融分销是针对企业类型的经销商推出的车辆抵押贷款金融服务。如果您具有企业资质并想开展车辆抵押贷款业务，不妨加盟金融分销业务吧！您将接受神州车电商的专业培训，为终端用户办理验车并完成后续车辆抵押贷款手续后，将有超多返点等着您，期待您的加入！</dd>
+        </dl>
+      </li>
+    </ul>
+    <ul class="bottom ul-common">
+      <li>
+        <strong>自有车源</strong>
+        <p>神州买买车全国已有实体门店126家</p>
+      </li>
+      <li>
+        <strong>车型丰富</strong>
+        <p>包含日系、德系、韩系、美系等各种车型</p>
+      </li>
+      <li>
+        <strong>合作无忧</strong>
+        <p>一站式解决车源、资金、盈利多重难题</p>
+      </li>
+    </ul>
+  </div>
+  <div class="advantage">
+    <h2 class="business-title">产品优势</h2>
+    <div class="img">
+      <img src="images/login_advantage.png" alt="我们的优势">
+    </div>
+    <ul class="advantage-list ul-common">
+      <li>低首付畅享汽车生活</li>
+      <li>3年贷款无压力购车</li>
+      <li>2年原厂质保品质</li>
+      <li>5s自营店全国服务</li>
+    </ul>
+  </div>
+  <div class="footer">
+    <span class="f-logo"></span>
+    <p>Copyright © 2015-2018 www.maimaiche.com All Right Reserved</p>
+    <p>神州买买车 闽ICP备16010272号-1</p>
+  </div>
+  <div class="fixed-share">
+    <img src="images/share.png" alt="分享图片">
+  </div>
+</body>
+</html>
